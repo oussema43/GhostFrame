@@ -32,11 +32,13 @@ Select multiple images, choose an output folder, and process them all with a sin
 
 ```plaintext
 GhostFrame/
-├── main.py          # Python script (the app)
-├── gui.ui           # UI layout file from Qt Designer
-├── icon.png         # App window icon
-├── screenshots/     # Screenshots for GitHub preview
-└── README.md        # This file
+├── main.py           # Python script (the app)
+├── gui.ui            # UI layout file from Qt Designer
+├── icon.png          # App window icon
+├── screenshots/      # Screenshots for GitHub preview
+├── requirements.txt  # List of required Python packages
+└── README.md         # This file
+
 ```
 
 ## 🧰 Requirements
@@ -59,11 +61,9 @@ cd background-remover-gui
 2. Install the required packages:
 ```bash
 pip install -r requirements.txt
-
 ```
 3. Run the application:
 ```bash
 python main.py
-
 ```
 4.Enjoy! 🎉

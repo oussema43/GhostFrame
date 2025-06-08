@@ -2,7 +2,7 @@
   <img src="icon.png" width="120" alt="App Icon"/>
 </p>
 
-<h1 align="center">🖼️ Background Remover GUI</h1>
+<h1 align="center">🖼️ GhostFrame </h1>
 
 A simple desktop application that removes backgrounds from images using AI, powered by `rembg` and built with PyQt5.  
 Select multiple images, choose an output folder, and process them all with a single click!
@@ -31,7 +31,7 @@ Select multiple images, choose an output folder, and process them all with a sin
 ## 📂 Project Structure
 
 ```plaintext
-background-remover-gui/
+GhostFrame/
 ├── main.py          # Python script (the app)
 ├── gui.ui           # UI layout file from Qt Designer
 ├── icon.png         # App window icon

@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>300</height>
+    <width>860</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
-    <height>250</height>
+    <width>600</width>
+    <height>450</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Background Remover</string>
+   <string>GhostFrame</string>
   </property>
   <property name="styleSheet">
    <string notr="true">
@@ -25,15 +25,17 @@
           background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
                       stop:0 #f0f0f0, stop:1 #d6e4f0);
           font-family: "Segoe UI";
-          font-size: 12pt;
+          font-size: 20px;
         }
 
         QPushButton {
           background-color: #4a90e2;
           color: white;
           border-radius: 10px;
-          padding: 8px;
-          min-width: 80px;
+          padding: 12px;
+          min-width: 120px;
+          min-height: 40px;
+          font-size: 20px;
         }
 
         QPushButton:hover {
@@ -43,10 +45,12 @@
         QLabel {
           background-color: transparent;
           color: #333;
+          padding: 8px;
+          font-size: 16px;
         }
       </string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" spacing="10">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <spacer name="verticalSpacer_top">
      <property name="orientation">
@@ -55,23 +59,39 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>20</height>
+       <height>60</height>
       </size>
      </property>
     </spacer>
    </item>
    <item>
     <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:30px; font-weight:600;&quot;&gt;GhostFrame&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Background Remover&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <property name="margin">
+      <number>10</number>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" spacing="10">
+    <spacer name="verticalSpacer_afterTitle">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>50</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer_left1">
        <property name="orientation">
@@ -79,7 +99,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>60</width>
          <height>20</height>
         </size>
        </property>
@@ -89,36 +109,71 @@
       <widget class="QLabel" name="label_2">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>150</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Input File:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Input File:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="margin">
+        <number>16</number>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="Inpu">
-       <property name="styleSheet">
-        <string notr="true">font-size:12pt; text-decoration: none;</string>
+      <spacer name="horizontalSpacer_labelInput">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="Input">
        <property name="text">
         <string/>
        </property>
        <property name="alignment">
-        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
        </property>
+       <property name="margin">
+        <number>16</number>
+       </property>
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_beforeButton">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QPushButton" name="Btinput">
+       <property name="minimumSize">
+        <size>
+         <width>144</width>
+         <height>64</height>
+        </size>
+       </property>
        <property name="text">
         <string>Browse</string>
        </property>
@@ -131,7 +186,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>60</width>
          <height>20</height>
         </size>
        </property>
@@ -140,7 +195,20 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" spacing="10">
+    <spacer name="verticalSpacer_betweenInputOutput">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>50</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <spacer name="horizontalSpacer_left2">
        <property name="orientation">
@@ -148,7 +216,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>60</width>
          <height>20</height>
         </size>
        </property>
@@ -158,36 +226,71 @@
       <widget class="QLabel" name="label_3">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>150</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Output Folder:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Output Folder:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="margin">
+        <number>16</number>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="Output">
-       <property name="styleSheet">
-        <string notr="true">font-size:12pt; text-decoration: none;</string>
+      <spacer name="horizontalSpacer_labelOutput">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="Output">
        <property name="text">
         <string/>
        </property>
        <property name="alignment">
-        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
        </property>
+       <property name="margin">
+        <number>8</number>
+       </property>
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_beforeButton2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QPushButton" name="Btoutput">
+       <property name="minimumSize">
+        <size>
+         <width>144</width>
+         <height>64</height>
+        </size>
+       </property>
        <property name="text">
         <string>Browse</string>
        </property>
@@ -200,7 +303,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>60</width>
          <height>20</height>
         </size>
        </property>
@@ -209,9 +312,48 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" spacing="20">
+    <spacer name="verticalSpacer_beforeButtons">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>60</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <spacer name="horizontalSpacer_left3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>60</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="BtRemoveBG">
+       <property name="minimumSize">
+        <size>
+         <width>144</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Remove BG</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_betweenButtons">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -224,14 +366,13 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="mgrl">
-       <property name="text">
-        <string>Remove BG</string>
+      <widget class="QPushButton" name="BtCancel">
+       <property name="minimumSize">
+        <size>
+         <width>144</width>
+         <height>64</height>
+        </size>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="Annuler">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -244,7 +385,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>60</width>
          <height>20</height>
         </size>
        </property>
@@ -260,7 +401,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>60</height>
       </size>
      </property>
     </spacer>
@@ -270,16 +411,36 @@
  <resources/>
  <connections>
   <connection>
-   <sender>Annuler</sender>
+   <sender>BtCancel</sender>
    <signal>clicked()</signal>
    <receiver>Output</receiver>
    <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
   </connection>
   <connection>
-   <sender>Annuler</sender>
+   <sender>BtCancel</sender>
    <signal>clicked()</signal>
-   <receiver>Inpu</receiver>
+   <receiver>Input</receiver>
    <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
   </connection>
  </connections>
 </ui>

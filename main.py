@@ -1,14 +1,15 @@
-from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
+from datetime import datetime
 from PyQt5.QtGui import QIcon
+from PyQt5.uic import loadUi
 from rembg import remove
 from PIL import Image
 import sys
 import os
 import zipfile
-from datetime import datetime
 
-input_paths = []  # Now stores multiple input paths
+
+input_paths = []  # Stores multiple input paths
 output_dir = ""
 
 def remove_background(input_path, output_path):
@@ -24,7 +25,7 @@ def Btinput_click():
         file_list = "\n".join([os.path.basename(f) for f in files[:3]])  # Show first 3 filenames
         if len(files) > 3:
             file_list += f"\n...and {len(files)-3} more"
-        windows.Inpu.setText(f"Selected {len(files)} images:\n{file_list}")
+        windows.Input.setText(f"Selected {len(files)} images:\n{file_list}")
 
 def Btoutput_click():
     global output_dir
@@ -32,7 +33,7 @@ def Btoutput_click():
     if output_dir:
         windows.Output.setText(f"Output Folder: {output_dir}")
 
-def mgrl_click():
+def BtRemoveBG_click():
     if not input_paths or not output_dir:
         QMessageBox.warning(None, "Missing Paths", "Please select both input files and output folder.")
         return
@@ -82,11 +83,22 @@ def mgrl_click():
     if message:
         QMessageBox.information(None, "Processing Complete", "\n".join(message))
 
+def BtCancel_click():
+    global input_paths, output_dir
+    input_paths = []
+    output_dir = ""
+    windows.Input.clear()
+    windows.Output.clear()
+
 app = QApplication(sys.argv)
 windows = loadUi("gui.ui")
 app.setWindowIcon(QIcon("icon.png")) 
 windows.show()
+
+# Connect buttons to functions
 windows.Btinput.clicked.connect(Btinput_click)
 windows.Btoutput.clicked.connect(Btoutput_click)
-windows.mgrl.clicked.connect(mgrl_click)
+windows.BtRemoveBG.clicked.connect(BtRemoveBG_click)
+windows.BtCancel.clicked.connect(BtCancel_click)
+
 app.exec_()
